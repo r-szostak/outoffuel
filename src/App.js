@@ -23,6 +23,8 @@ function reducer(state, action) {
             }
           : vehicle
       );
+    default:
+      return state;
   }
 }
 
