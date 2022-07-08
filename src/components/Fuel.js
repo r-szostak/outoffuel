@@ -17,7 +17,7 @@ export const Fuel = ({ vehicles, activeVehicle }) => {
   const averageConsumption = getAverageConsumption(vehicles, activeVehicle);
 
   return (
-    <div className="expense-list">
+    <>
       <p className="section-top">
         <FontAwesomeIcon
           icon={faGauge}
@@ -26,8 +26,8 @@ export const Fuel = ({ vehicles, activeVehicle }) => {
         />
         Fuel
       </p>
-      <div className="statistics">
-        <div className="statistics-item">
+      <div className="container">
+        <div className="container-item">
           {
             <p>
               <FontAwesomeIcon
@@ -39,10 +39,10 @@ export const Fuel = ({ vehicles, activeVehicle }) => {
               <span> l/100km</span>
             </p>
           }
-          <p>Średnie spalanie paliwa</p>
+          <p className="description">Avg. fuel consumption</p>
         </div>
 
-        <div className="statistics-item">
+        <div className="container-item">
           <p>
             <FontAwesomeIcon
               icon={faArrowTrendDown}
@@ -53,10 +53,10 @@ export const Fuel = ({ vehicles, activeVehicle }) => {
             <span> l/100km</span>
           </p>
 
-          <p>ostatnie spalanie</p>
+          <p className="description">Last fuel consumption</p>
         </div>
 
-        <div className="statistics-item">
+        <div className="container-item">
           <p>
             <FontAwesomeIcon
               icon={faArrowRight}
@@ -69,9 +69,9 @@ export const Fuel = ({ vehicles, activeVehicle }) => {
                 ?.expenses[0]?.pricePerLiter
             }
           </p>
-          <p>ostatnia cena paliwa</p>
+          <p className="description">Last fuel price</p>
         </div>
       </div>
-    </div>
+    </>
   );
 };

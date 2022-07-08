@@ -5,7 +5,7 @@ import { faChartLine } from "@fortawesome/free-solid-svg-icons";
 
 export const ExpensesList = ({ vehicles, activeVehicle }) => {
   return (
-    <div className="expense-list">
+    <>
       <p className="section-top">
         <FontAwesomeIcon
           icon={faChartLine}
@@ -22,6 +22,6 @@ export const ExpensesList = ({ vehicles, activeVehicle }) => {
             <ExpenseItem key={index} expense={expense} />
           ))}
       </ul>
-    </div>
+    </>
   );
 };

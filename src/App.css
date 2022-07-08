@@ -15,25 +15,73 @@ html {
 }
 
 body {
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;  
-min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;  
+  min-height: 100vh;
 }
 
 #root {
   display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;  
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;  
   max-width: 75vw;
   width: 60rem;
 }
+
+.section-top {
+  font-size: 1.4rem;
+  padding: 1.2rem 1.2rem;
+  background-color: #2e2f33;
+  border-radius: .5rem;
+  text-align: center;
+  width: 15rem;
+}
+
+.container {
+  background-color: #2e2f33;
+  color: #fff;
+  box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem;
+  margin: 1rem 0;
+  border-radius: .3rem;
+  font-size: 1.6rem;
+  width: 100%;
+ }
+
+.container-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.container-item:last-child {
+  margin-bottom: 0;
+ }
+
+.icon {
+  padding-right: 1rem;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #8b8f92;
+}  
+
+  /* Navbar */
+
 h1 {
   text-align: center;
   font-size: 3.2rem;
+  padding: 2rem;
 }
+
+
+/*Car management */ 
 
 .vehicle-select {
   display: flex;
@@ -41,8 +89,21 @@ h1 {
   width: 100%;
 }
 
+/* fuel */
+
+.container-item span {
+  font-size: 1.2rem;
+  color: #8b8f92;
+}
+
+
+/*costs */
+
+/*expenses */ 
+
 .list {
   list-style-type: none;
+  margin-top: 1rem;
   margin-bottom: 3rem;
   font-size: 1.6rem;
   width: 100%;
@@ -55,39 +116,26 @@ h1 {
   display: flex;
   align-items: center;
   padding: 1.2rem;
-  margin: 1rem 0;
+  margin-bottom: 1rem;
   border-radius: .3rem;
   
 }
 
-.expense-item {
+.list li:last-child {
+  margin-bottom: 0; 
+}
+.expense-container {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.expense-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+
+.expense-description {
+  font-size: 1.3rem;
+  color: #8b8f92;
 }
 
-.expense {
-  margin-bottom: .5rem;
-}
-
-.expense-data {
-  display: flex;
-  justify-content: space-between;
-  
- 
-}
-
-.expense-details {
-  display: flex;
-  flex-direction: row;
-  font-size: 1.2rem;
-}
+/* forms */
 
 input[type='text'],
 input[type='number'] {
@@ -112,6 +160,7 @@ input[type='submit'] {
   margin-bottom: 1rem;
   background-color: #97b6df;
 }
+
 select {
   border: 1px solid #dedede;
   border-radius: 2px;
@@ -121,53 +170,21 @@ select {
   margin-bottom: 1rem;
 }
 
-.statistics {
-  background-color: #2e2f33;
-  color: #fff;
-  box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
-  display: flex;
-  flex-direction: column;
-  padding: 1.2rem;
-  margin: 1rem 0;
-  border-radius: .3rem;
-  font-size: 1.6rem;
+label {
+  font-size: 1.7rem;
   width: 100%;
 }
 
-.statistics-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
+input[type='checkbox'] {
+  cursor: pointer;
+  border: 1px solid #dedede;
+  background-color: #97b6df;
+  margin: 1rem 1rem;
+  width: 2rem;
+  height: 2rem;
 }
 
-.section-top {
-  font-size: 1.4rem;
-  padding: 1.2rem 1.2rem;
-  background-color: #2e2f33;
-  border-radius: .5rem;
-  text-align: center;
-  width: 15rem;
-}
-
-.icon {
-  padding-right: 1rem;
-}
-
-.costs {
-
-  background-color: #2e2f33;
-  color: #fff;
-  box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.2rem;
-  margin: 1rem 0;
-  border-radius: .3rem;
-  font-size: 1.6rem;
-  width: 100%;
-}
+/*button*/
 
 .btn {
   background-color: #97b6df;

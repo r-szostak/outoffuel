@@ -1,6 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoins } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCoins,
+  faMoneyBillTransfer,
+} from "@fortawesome/free-solid-svg-icons";
 import { getMonthlyCosts } from "../utilites/utilities";
 
 export const Costs = ({ vehicles, activeVehicle }) => {
@@ -17,7 +20,7 @@ export const Costs = ({ vehicles, activeVehicle }) => {
   );
 
   return (
-    <div className="expense-list">
+    <>
       <p className="section-top">
         <FontAwesomeIcon
           icon={faCoins}
@@ -27,18 +30,31 @@ export const Costs = ({ vehicles, activeVehicle }) => {
         Costs
       </p>
 
-      <div className="costs">
-        <h3>W tym miesiącu</h3>
-        <p>
-          <span>$</span>
-          {actualMonthCost ? actualMonthCost : "0.00"}
-        </p>
-        <h3>W poprzednim miesiącu</h3>
-        <p>
-          <span> $</span>
-          {previousMonthCost ? previousMonthCost : "0.00"}
-        </p>
+      <div className="container">
+        <div className="container-item">
+          <p>
+            <FontAwesomeIcon
+              icon={faMoneyBillTransfer}
+              className="icon"
+              style={{ color: "#97b6df" }}
+            />
+            ${actualMonthCost ? actualMonthCost : "0.00"}
+          </p>
+          <p className="description">Actual month</p>
+        </div>
+
+        <div className="container-item">
+          <p>
+            <FontAwesomeIcon
+              icon={faMoneyBillTransfer}
+              className="icon"
+              style={{ color: "#97b6df" }}
+            />
+            ${previousMonthCost ? previousMonthCost : "0.00"}
+          </p>
+          <p className="description">Previous month</p>
+        </div>
       </div>
-    </div>
+    </>
   );
 };

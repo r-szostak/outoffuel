@@ -41,44 +41,44 @@ export const AddExpenses = ({ vehicles, activeVehicle, addExpense }) => {
         <FontAwesomeIcon icon={faPlus} />
       </button>
       {!showAddExpense && (
-        <div>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="number"
-              step=".01"
-              min="0"
-              placeholder="Reffueled liters"
-              value={reffueled}
-              required
-              onChange={(e) => setReffueled(e.target.value)}
-            ></input>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="number"
+            step=".01"
+            min="0"
+            placeholder="Reffueled liters"
+            value={reffueled}
+            required
+            onChange={(e) => setReffueled(e.target.value)}
+          ></input>
 
-            <input
-              type="number"
-              step=".01"
-              min="0"
-              placeholder="Price per liter"
-              value={pricePerLiter}
-              required
-              onChange={(e) => setPricePerLiter(e.target.value)}
-            ></input>
-            <input
-              type="number"
-              min={minimalOdoValue}
-              placeholder="Odometer"
-              value={odometer}
-              required
-              onChange={(e) => setOdometer(e.target.value)}
-            ></input>
-            <input
-              type="checkbox"
-              value={fullTank}
-              onChange={(e) => setFullTank(!fullTank)}
-              checked={fullTank}
-            ></input>
-            <input type="submit" value="add" />
-          </form>
-        </div>
+          <input
+            type="number"
+            step=".01"
+            min="0"
+            placeholder="Price per liter"
+            value={pricePerLiter}
+            required
+            onChange={(e) => setPricePerLiter(e.target.value)}
+          ></input>
+          <input
+            type="number"
+            min={minimalOdoValue}
+            placeholder="Odometer"
+            value={odometer}
+            required
+            onChange={(e) => setOdometer(e.target.value)}
+          ></input>
+          <label htmlFor="fullTank">Refueling a full tank</label>
+          <input
+            id="fullTank"
+            type="checkbox"
+            value={fullTank}
+            onChange={(e) => setFullTank(!fullTank)}
+            checked={fullTank}
+          ></input>
+          <input type="submit" value="ADD" />
+        </form>
       )}
     </>
   );

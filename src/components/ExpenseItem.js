@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGasPump } from "@fortawesome/free-solid-svg-icons";
+import { faGasPump, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export const ExpenseItem = ({ expense }) => {
   return (
@@ -11,17 +11,25 @@ export const ExpenseItem = ({ expense }) => {
         className="icon"
         style={{ color: "#97b6df" }}
       />
-      <div className="expense-item">
-        <div className="expense">
-          <div className="expense-data">
-            <p>{expense.date}</p>
-            <p>Odometer: {expense.odometer}</p>
-          </div>
+      <div className="expense-container">
+        <div className="container-item">
+          <p className="expense-description">{expense.date}</p>
+          <p className="expense-description">Odometer: {expense.odometer}</p>
+        </div>
+        <div className="container-item">
           <h3>${(expense.reffueled * expense.pricePerLiter).toFixed(2)}</h3>
         </div>
-        <div className="expense-details">
-          <p>{expense.reffueled}l -</p>
-          <p>${expense.pricePerLiter}/l</p>
+
+        <div className="container-item">
+          <p className="description">
+            {expense.reffueled}l{" "}
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              style={{ color: "#97b6df" }}
+              size="xs"
+            />{" "}
+            ${expense.pricePerLiter}/l
+          </p>
         </div>
       </div>
     </li>
