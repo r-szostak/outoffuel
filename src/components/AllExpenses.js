@@ -1,10 +1,13 @@
 import React from "react";
 import { ExpenseItem } from "./ExpenseItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChartLine, faSackDollar } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChartLine,
+  faArrowRotateBack,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-export const ExpensesList = ({ vehicles, activeVehicle }) => {
+export const AllExpenses = ({ vehicles, activeVehicle }) => {
   return (
     <>
       <p className="section-top">
@@ -13,26 +16,20 @@ export const ExpensesList = ({ vehicles, activeVehicle }) => {
           className="icon"
           style={{ color: "#97b6df" }}
         />
-        Last expenses
+        All expenses
       </p>
 
       <ul className="list">
         {vehicles
           .find((vehicle) => vehicle.model === activeVehicle)
-          ?.expenses?.slice(0, 5)
-          .map((expense, index) => (
+          ?.expenses.map((expense, index) => (
             <ExpenseItem key={index} expense={expense} />
           ))}
       </ul>
-      <Link to="/AllExpenses" className="link">
-        <p className="section-top">
-          <FontAwesomeIcon
-            icon={faSackDollar}
-            className="icon"
-            style={{ color: "#97b6df" }}
-          />
-          Show all expenses
-        </p>
+      <Link to="/">
+        <button className={`btn`}>
+          <FontAwesomeIcon icon={faArrowRotateBack} />
+        </button>
       </Link>
     </>
   );

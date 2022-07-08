@@ -5,7 +5,9 @@ import { Fuel } from "./components/Fuel";
 import { Costs } from "./components/Costs";
 import { AddExpenses } from "./components/AddExpenses";
 import { ExpensesList } from "./components/ExpensesList";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import { AllExpenses } from "./components/AllExpenses";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -56,30 +58,48 @@ function App() {
 
   return (
     <>
-      <NavBar />
-      <CarManagement
-        vehicles={vehicles}
-        addVehicle={addVehicle}
-        setActiveVehicle={setActiveVehicle}
-      />
-      {activeVehicle && (
-        <Fuel vehicles={vehicles} activeVehicle={activeVehicle} />
-      )}
-      {activeVehicle && (
-        <Costs vehicles={vehicles} activeVehicle={activeVehicle} />
-      )}
-      {activeVehicle &&
-        vehicles.find((vehicle) => vehicle.model === activeVehicle)?.expenses
-          .length > 0 && (
-          <ExpensesList vehicles={vehicles} activeVehicle={activeVehicle} />
-        )}
-      {activeVehicle && (
-        <AddExpenses
-          vehicles={vehicles}
-          activeVehicle={activeVehicle}
-          addExpense={addExpense}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <NavBar />
+              <CarManagement
+                vehicles={vehicles}
+                addVehicle={addVehicle}
+                setActiveVehicle={setActiveVehicle}
+              />
+              {activeVehicle && (
+                <Fuel vehicles={vehicles} activeVehicle={activeVehicle} />
+              )}
+              {activeVehicle && (
+                <Costs vehicles={vehicles} activeVehicle={activeVehicle} />
+              )}
+              {activeVehicle &&
+                vehicles.find((vehicle) => vehicle.model === activeVehicle)
+                  ?.expenses.length > 0 && (
+                  <ExpensesList
+                    vehicles={vehicles}
+                    activeVehicle={activeVehicle}
+                  />
+                )}
+              {activeVehicle && (
+                <AddExpenses
+                  vehicles={vehicles}
+                  activeVehicle={activeVehicle}
+                  addExpense={addExpense}
+                />
+              )}{" "}
+            </>
+          }
         />
-      )}
+        <Route
+          path="AllExpenses"
+          element={
+            <AllExpenses vehicles={vehicles} activeVehicle={activeVehicle} />
+          }
+        />
+      </Routes>
     </>
   );
 }

@@ -63,7 +63,8 @@ export const AddExpenses = ({ vehicles, activeVehicle, addExpense }) => {
           ></input>
           <input
             type="number"
-            min={minimalOdoValue}
+            min={parseInt(minimalOdoValue) + 1}
+            step="1"
             placeholder="Odometer"
             value={odometer}
             required

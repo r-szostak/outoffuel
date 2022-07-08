@@ -104,7 +104,7 @@ h1 {
 .list {
   list-style-type: none;
   margin-top: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   font-size: 1.6rem;
   width: 100%;
 }
@@ -211,4 +211,14 @@ input[type='checkbox'] {
 
 .hide {
   display: none;
+}
+
+.link {
+  text-decoration: none !important;
+  color: inherit;
+  margin-bottom: 1rem;
+}
+
+.link:hover {
+  transform: translateY(2px);
 }

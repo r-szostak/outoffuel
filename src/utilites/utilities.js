@@ -55,7 +55,7 @@ export const getMonthlyCosts = (vehicles, activeVehicle, month) => {
         expense.date.includes(`-${month + 1}-`) ||
         expense.date.includes(`-0${month + 1}-`)
     );
-    console.log(month);
+
     if (getData.length > 1) {
       return Object.values(getData)
         .reduce((t, value) => t + value.reffueled * value.pricePerLiter, 0)
@@ -68,6 +68,5 @@ export const minimalOdometerValue = (vehicles, activeVehicle) => {
   const foundActiveVehicle = vehicles.find(
     (vehicle) => vehicle.model === activeVehicle
   )?.expenses;
-
-  return foundActiveVehicle[0] ? foundActiveVehicle[0].odometer + 1 : "0";
+  return foundActiveVehicle[0] ? foundActiveVehicle[0].odometer : "0";
 };
