@@ -24,24 +24,10 @@ function reducer(state, action) {
   }
 }
 
-// vehicles = {[
-//   model: "Ford"
-//   expenses: [{
-//     reffueled,
-//     pricePerLiter,
-//   }],
-//   model: "pasat"
-//   expenses: [{
-//     reffueled,
-//     pricePerLiter,
-//   }]]
-// }
-
 const initalState = JSON.parse(localStorage.getItem("vehicles")) || [];
 
 function App() {
   const [vehicles, dispatch] = useReducer(reducer, initalState);
-
   const [activeVehicle, setActiveVehicle] = useState();
 
   const addVehicle = (model) => {

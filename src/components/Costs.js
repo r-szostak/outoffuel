@@ -9,6 +9,7 @@ export const Costs = ({ vehicles, activeVehicle }) => {
     activeVehicle,
     new Date().getMonth()
   );
+
   const previousMonthCost = getMonthlyCosts(
     vehicles,
     activeVehicle,
@@ -30,7 +31,7 @@ export const Costs = ({ vehicles, activeVehicle }) => {
         <h3>W tym miesiącu</h3>
         <p>
           <span>$</span>
-          {actualMonthCost ? actualMonthCost : "$0.00"}
+          {actualMonthCost ? actualMonthCost : "0.00"}
         </p>
         <h3>W poprzednim miesiącu</h3>
         <p>

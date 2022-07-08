@@ -6,6 +6,7 @@ import {
   faArrowTrendDown,
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
+
 import {
   getAverageConsumption,
   getLastConsumption,
@@ -68,7 +69,6 @@ export const Fuel = ({ vehicles, activeVehicle }) => {
                 ?.expenses[0]?.pricePerLiter
             }
           </p>
-
           <p>ostatnia cena paliwa</p>
         </div>
       </div>

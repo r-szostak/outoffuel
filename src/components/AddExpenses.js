@@ -9,6 +9,7 @@ export const AddExpenses = ({ vehicles, activeVehicle, addExpense }) => {
   const [odometer, setOdometer] = useState();
   const [fullTank, setFullTank] = useState(false);
   const [showAddExpense, setshowAddExpense] = useState(true);
+
   const minimalOdoValue = minimalOdometerValue(vehicles, activeVehicle);
 
   const handleSubmit = (e) => {

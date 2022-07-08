@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const CarManagement = ({ vehicles, addVehicle, setActiveVehicle }) => {
   const [model, setModel] = useState();
+  const [duplicate, setDuplicate] = useState(false);
+
+  useEffect(() => {
+    if (vehicles.find((vehicle) => vehicle.model === model)) {
+      setDuplicate(true);
+    } else {
+      setDuplicate(false);
+    }
+  }, [model, vehicles]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    addVehicle(model);
-    setModel("");
+    if (!duplicate) {
+      addVehicle(model);
+      setModel("");
+    }
   };
 
   return (
